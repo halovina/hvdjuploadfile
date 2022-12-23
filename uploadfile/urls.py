@@ -19,4 +19,5 @@ from home.views import HomePageView
 urlpatterns = [
     path('', HomePageView.as_view()),
     path('home/', include('home.urls')),
+    path('api/', include('api.urls')),
 ]
