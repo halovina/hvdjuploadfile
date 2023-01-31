@@ -33,3 +33,12 @@ class UploadView(TemplateView):
             fileurl = fs.url(file)
             messages.success(self.request,"file berhasil di upload")
         return HttpResponseRedirect("/home/upload")
+    
+
+class OrderView(TemplateView):
+    template_name = 'order/index.html'
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs) 
+        return context
